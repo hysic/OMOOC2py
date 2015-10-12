@@ -1,4 +1,4 @@
 # hysic's Python Journey
-~ 提供给学员一个有序的开始,作为脚手架,作为起点
-
+* 开智OMOOC2py成员
+* GitHub: <https://github.com/hysic>
 
