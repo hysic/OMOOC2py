@@ -1,6 +1,4 @@
 # git 私人教程
-issues
-wiki
 
 ## 背景
 很早就听说过github的大名（~~同性交友网站~~），在Coursera上某门MOOC也用过一点github，通读过[廖雪峰老师的git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000),但实际掌握的仅限于git基本操作，能向github push repo，没有进一步的需求也就没有进一步的动力。
@@ -14,13 +12,21 @@ wiki
 ## 使用
 git clone后本地修改，git push到GitHub，修改内容会自动同步到Gitbook。
 
-目前尚未碰到群里大家遇到的各种坑，也并未安装gitbook命令行。但在测试的时候，本地修改→git push→gitbook看效果，重复了几次，发现安装gitbook可以直接本地预览，不用
+目前尚未碰到群里大家遇到的各种坑，也并未安装gitbook命令行。但在测试的时候，本地修改→git push→gitbook看效果，重复了几次，发现安装gitbook可以直接本地预览，不用重复
 ## gitbook-cli安装
-```cli
+```bash
 sudo npm install gitbook-cli -g # Need sudo
-gitbook init #
+gitbook init # like git init, create necessary file, like SUMMARY.md and README.md
 gitbook install # intall necessary plugin, like DISQUS
 gitbook serve # Not server
+# 浏览器打开http://localhost:4000
 ```
+## 踏坑
+* `gitbook serve` 之后，`control+Z` 退出，修改文件后，再次 `gitbook serve` ，提示错误`... Uhoh. Got error listen EADDRINUSE ...` ，google后修改 `--port` 与 `--lrport` 均无果，关了终端重新打开，问题消失。
+    * 无意中发现终端的提示很清楚：`Press CTRL+C to quit` ，手贱才按 `control+Z` 。
+    * wiki `control+Z` 与 `control+C` 的区别。`control+Z` 的作用是暂停进程(to suspend a process)，之后出入 `bg` 可查看暂停进程，输入 `fg` 可继续该进程；`control+C` 的作用才是终止当前任务（about the current task）。
+    * 修改文件的过程中不需要关闭gitbook server，在修改文件的过程中gitbook server 会重启，随时更新修改的内容。
+* 尚未解决的问题：
+    * 在运行gitbook server打开另一个不同的gitbook server，再次出现 `Got error listen EADDRINUSE` ，修改 `--lrport` 也没有解决该问题。但目前该问题并不是必须解决，且留待日后再说。
 
 
