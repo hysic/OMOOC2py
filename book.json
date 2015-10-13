@@ -3,6 +3,8 @@
         "disqus"
     ],
     "pluginsConfig": {
-        "shortName": "hysic"
+    	"disqus":{
+    		"shortName": "hysic"
+    	}
     }
 }
