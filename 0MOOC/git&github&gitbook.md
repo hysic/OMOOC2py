@@ -8,11 +8,11 @@
 以开智学院[OMOOC2py仓库](https://github.com/OpenMindClub/OMOOC2py)为例，一进去是**code**标签，即代码仓库，可以fork到自己的仓库。右侧接下来是**Issues**标签，任务发布与技术问题讨论就是在这里，有点类似BBS（当然没那么水），据 全职陪练-CnFeat说，Issues还可以用来[写blog](https://github.com/lifesinger/lifesinger.github.io/issues)，各种意想不到。**PullRequest**标签，可以将自己fork后修改的内容申请合并到原仓库中，不过大妈说，本仓库作为所有学员的模板仓库，不接受PR。**wiki**标签，[官方介绍](https://help.github.com/articles/about-github-wikis/)说可以用来写任何东西，如技术文档，本仓库wiki主要是各种各种规约和岩钉。**Pulse**和**Graphs**标签，貌似是一些数据统计，待需要时详查。
 ## gitbook配置
 * 打开[gitbook](https://www.gitbook.com)，选择用GitHub账号登陆
-* Create a new book，选择从GitHub，选择仓库（就是从开智OMOOC2py fork的仓库），输入标题，更改链接（可选），点Create Book, gitbook 随即生成
+* Create a new book，选择从GitHub，选择仓库（就是从开智OMOOC2py fork的仓库），输入标题，更改链接（可选），点Create Book, gitbook 随即生成。
 ## 使用
 git clone后本地修改，git push到GitHub，修改内容会自动同步到Gitbook。
 
-目前尚未碰到群里大家遇到的各种坑，也并未安装gitbook命令行。但在测试的时候，本地修改→git push→gitbook看效果，重复了几次，发现安装gitbook可以直接本地预览，不用重复
+目前尚未碰到群里大家遇到的各种坑，也并未安装gitbook命令行。但在测试的时候，本地修改→git push→gitbook看效果，重复了几次，发现安装gitbook可以直接本地预览，不用重复上述操作，本地预览完合格后一次push即可。
 ## gitbook-cli安装
 ```bash
 sudo npm install gitbook-cli -g # Need sudo

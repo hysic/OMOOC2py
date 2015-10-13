@@ -1,13 +1,13 @@
 {"title": "hysic's Python Journey",
     "version": "15.9.18,2020",
-    "description": "OMOOC.py tutorial for teching",
-    "author": "OMOOC-support <omooc-support@googlegroups.com>",
+    "description": "hysc's Python journey at OMOOC2py",
+    "author": "hysic <hysic@gmail.com>",
 
     "plugins": [
         "disqus"
     ],
     "pluginsConfig": {
-        "shortName": "Openmindclub"
+        "shortName": "hysic"
     }
 }
 

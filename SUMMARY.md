@@ -9,7 +9,7 @@
 - [代码 (_src)](_src/README.md)
 - [素材 (draft)](draft/README.md)
   + [教程该怎么写](draft/how2tutorial.md)
-  + [思考碎片](draft/debris/md)
+  + [思考碎片](draft/debris.md)
 - [有关](ABOUT.md)
 
 
