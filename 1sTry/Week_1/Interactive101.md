@@ -40,14 +40,14 @@
   ~ 这里需要解决两个问题, 一个是持续运行, 等待继续输入或退出; 一个是如何退出.
   
   * 持续运行
-    * 不要每输入一句话都提示是否要继续
-    * while True 循环
+    * 不想每输入一句话都提示是否要继续
+    * `while True` 循环
     * 注意一定要退出
   * 退出方式:
-    * control-C control-D 退出
-    * 注意: except KeyboardInterupt 之后一定要 break, 否则无法退出无限循环
-    * sys.exit(exit_message), 无须 break
-    * 小问题: `^C`
+    * 希望 `control-C` 或 `control-D` 退出
+    * 注意: `except KeyboardInterupt` 之后一定要 `break`, 否则无法退出无限循环
+    * 另一种退出方式是 `sys.exit(exit_message)`, 无须 `break`
+    * 小问题: 在用 `control-C` 退出时,会在 `exit_message` 前多了一个`^C`字符.
  
 ### 输出为文件
 
@@ -56,13 +56,13 @@
 ~ 这里可进一步拆分为文件打开, 文件读取, 文件读入, 文件保存关闭.
   
   * 文件打开
-    * open(file_name, mode)
+    * `open(file_name, mode)`
    * 文件读入
-    * file.write(message)
-    * 运行发现file.write并不会写入换行符
-    * 注意要写入换行符'\n'
+    * `file.write(message)`
+    * 运行发现`file.write`并不会写入换行符
+    * 注意要写入换行符`'\n'`
   * 文件关闭
-    * file.close()
+    * `file.close()`
     * 一定要在退出前关闭文件
     * 不关闭会怎样?
     * 是否自动保存?
@@ -74,15 +74,20 @@
 ~ 任务进一步分解: 确认文件内容不为空, 文件读取并print
 
   * 确认文件不为空
-    * import os
-    * os.stat(file_name).st_size != 0:
+    
+    ```python
+    import os
+    if os.stat(file_name).st_size != 0:
+        pass
+    ```
+    
     * 参考: <http://stackoverflow.com/questions/2507808/python-how-to-check-file-empty-or-not>
     
   * 文件读取
-    * f.read()
-    * 以 a+ 方式打开的文件, 确认文件不为空后, 但 f.read()输出却为空
-      * 以 a+ 方式打开的文件, file position(我理解为文件中的光标)位于文件末尾, 这样当然读不出东西来了
-      * 使用 f.seek(0)将 file position 放在文件开头, 然后再 f.read()就行了 
+    * `f.read()`
+    * 坑: 以 `a+` 方式打开的文件, 确认文件不为空后, 但 `f.read()`输出却为空
+      * 以 `a+` 方式打开的文件, file position(我理解为文件中的光标)位于文件末尾, 这样当然读不出东西来了
+      * 使用 `f.seek(0)`将 file position 放在文件开头, 然后再` f.read()`就行了 
       * 参考: <http://stackoverflow.com/questions/14639936/how-to-read-from-file-opened-in-a-mode>
 
 ### 增加时间
@@ -97,14 +102,15 @@
 	* 缺点: 输出时间格式固定, 可用字符串拆分重组
 
 ## 开发心得
+
+* 本周任务卡片中已经帮我们把任务分解, 这给我们做了一个很好的示范, 以后即使没有我们也要自己对任务进行分解, 先分解成大块, 大块完成不了就再进一步细分, 这样一步一步完成心里会比较踏实
 * 要努力克服完成一小步所产生的巨大的膨胀感, 以及由此产生的想关掉编辑器干点别的的念头
 * @一休君所说的 <https://docs.python.org/2/index.html> 中的快速搜索框是个好东西.
 
-
 ## 下一步任务
 - [ ] 任务中说"先不管数据结构", 这是什么意思?
-- [ ] 中文编码问题?
+- [ ] 中文编码问题? 尚未遇到坑
 - [ ] time 格式的定制输出, e.g. 2015-10-21 16:43
-- [ ] DOCOPT的作用?
+- [ ] 阅读材料中推荐的DOCOPT的作用?
 
 
