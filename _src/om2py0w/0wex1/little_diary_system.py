@@ -30,14 +30,19 @@ def main():
 	while True:
 		try:
 			content = raw_input("> ")
-			t_list = time.ctime().split()
-			#dairy_file.write(t_list[-1] + '-' + t_list[1] + '-' + t_list[2] + ' ' + t_list[3] + '\t')
-			dairy_file.write(time.ctime() + '\t')
+			if content == "q" or content == "quit":
+				quit_message = raw_input("是否要退出?")
+				if quit_message == "y":
+					dairy_file.close()
+					break
+				
+			current_time = time.strftime("%Y-%m-%d %H: %M: %S")
+			dairy_file.write(current_time + '\t')
 			dairy_file.write(content)
 			dairy_file.write("\n")
 
 		except (KeyboardInterrupt, EOFError):
-			dairy_file.close()
+			# dairy_file.close()
 			sys.exit("退出日记.")	
 
 if __name__ == "__main__":
