@@ -6,6 +6,8 @@
 > + 一次接收输入一行笔记
 > + 保存为本地文件
 
+~ 代码: <https://github.com/hysic/OMOOC2py/blob/master/_src/om2py0w/0wex2/diary_gui.py>
+~ 代码说明: <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py0w/0wex2>
 
 ## 啥是 Tkinter?
 * 对于小白来说, 我认为[官方文档](https://docs.python.org/2.7/library/tkinter.html)并不是一个很好的入门教程, 通篇只有4个 Demo 实例, 而且还没有给运行效果图.
