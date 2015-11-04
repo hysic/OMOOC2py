@@ -65,7 +65,7 @@
 	+ 这似乎是 UDP 协议的特性, 
 
 * 接下来就是在 client 端增加一些默认参数, h/help/? 显示帮助, r/sync 显示历史记录, q/quit 退出 socket.然后用  `if/elif/else` 语句进行条件判断.
-* 具体代码见: <>, 代码运行说明见: <>.
+* 具体代码及代码说明见 <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py3w/3wex0>.
 * 任务需求的功能基本实现了, 下面看看任务代码具体是什么意思.
 
 ## 啥是 socket?
