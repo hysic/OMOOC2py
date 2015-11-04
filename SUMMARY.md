@@ -8,6 +8,8 @@
 		* [极简日记系统](1sTry/Week_1/Interactive101.md)
 	* [第2周行动](1sTry/Week_2/README.md)
 		* [日记系统 GUI 版](1sTry/Week_2/gui_diary.md)
+	* [第3周行动](1sTry/Week_3/README.md)
+		* [日记系统 net 版](1sTry/Week_3/diary_net.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
 - [代码 (_src)](_src/README.md) 
