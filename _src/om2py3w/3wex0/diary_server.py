@@ -6,7 +6,7 @@ __mail__ = "hysic1986@gmail.com"
 
 import socket
 
-server_address = ('localhost', 10001)
+server_address = ('192.168.1.74', 10001)
 
 def main():
 	# create an server socket, using UDP

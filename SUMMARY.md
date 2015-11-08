@@ -20,6 +20,8 @@
   + [[1wd4]大妈讲座笔记](Lect/20151022note.md)
   + [[1wd4]大妈讲座之 Top 3](Lect/20151022_review.md)
   + [[1wd6]北京 C2T2 个人总结](Lect/C2T2_20151024.md)
+  + [2wd4大妈讲座笔记](Lect/20151029note.md)
+  + [3wd4大妈讲座笔记](Lect/20151105note.md)
   + [思考碎片](Lect/debris.md)
   + [教程该怎么写](Lect/how2tutorial.md)
 

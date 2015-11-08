@@ -11,7 +11,7 @@ print """欢迎来到小小日记系统 Net 版
 	type q/quit to quit
 	type r/sync to show history"""
 
-server_address = ('localhost', 10001)
+server_address = ('192.168.1.72', 10001)
 
 def main():
 	# create an client socket, using UDP
