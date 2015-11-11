@@ -22,6 +22,7 @@
   + [[1wd6]北京 C2T2 个人总结](Lect/C2T2_20151024.md)
   + [2wd4大妈讲座笔记](Lect/20151029note.md)
   + [3wd4大妈讲座笔记](Lect/20151105note.md)
+  + [[3wd6]北京 C2T2 个人总结](Lect/C2T2_20151107.md)
   + [思考碎片](Lect/debris.md)
   + [教程该怎么写](Lect/how2tutorial.md)
 
