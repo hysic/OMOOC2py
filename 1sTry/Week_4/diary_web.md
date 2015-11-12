@@ -7,7 +7,7 @@
 >	* 在服务端保存为文件
 >* 同时兼容 3w 的 Net 版本的命令行界面进行交互
 
-~ 任务代码及说明: <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py4w>
+~ 任务代码及说明: <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py4w/4wex0>
 
 ## 任务开发记录
 ### Bottle 框架

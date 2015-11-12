@@ -10,6 +10,8 @@
 		* [日记系统 GUI 版](1sTry/Week_2/gui_diary.md)
 	* [第3周行动](1sTry/Week_3/README.md)
 		* [日记系统 net 版](1sTry/Week_3/diary_net.md)
+	* [第4周行动](1sTry/Week_4/README.md)
+		* [日记系统 Web 版](1sTry/Week_3/diary_web.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
 - [代码 (_src)](_src/README.md) 

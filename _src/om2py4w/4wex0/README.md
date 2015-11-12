@@ -7,7 +7,7 @@
 * 服务器: [bottle](http://bottlepy.org/docs/dev/index.html)
 * CLI客户端: [requests](http://docs.python-requests.org/en/latest/), [lxml](http://lxml.de/)
 
-~ 代码地址: <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py4w>
+~ 代码地址: <https://github.com/hysic/OMOOC2py/tree/master/_src/om2py4w/4wex0>
 
 * 代码说明
 	+ 命令行进入当前代码目录, 安装 `bottle` 模块, `python diary_web.py` 启动 Web 服务器.
