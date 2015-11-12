@@ -35,5 +35,6 @@ def write_diary():
 
 
 if __name__ == "__main__":
-	debug(True)
-	run(host='localhost', port=8080, reloader=True)
+	#debug(True)
+	#run(host='localhost', port=8080, reloader=True)
+	run(host='localhost', port=8080)

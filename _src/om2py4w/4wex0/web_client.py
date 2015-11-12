@@ -4,46 +4,51 @@
 __author__ = "hysic"
 __mail__ = "hysic1986@gmail.com"
 
-import socket
+import requests
+from lxml import html
 
-print """欢迎来到小小日记系统 Net 版
+help_message = """欢迎来到小小日记系统 Web 版
 	type h/help/? for help
 	type q/quit to quit
-	type r/sync to show history"""
+	type r/sync to show history
 
-server_address = ('locahost', 8080)
+	ATTENTION: type clear to empty history!!!
+	"""
+
+
+server_address = 'http://localhost:8080/diary'
+
+def read_diary():
+	# get the request data from the server page
+	r = requests.get(server_address)
+	# parse the page content into a nice tree structure
+	tree = html.fromstring(r.content)
+	# use XPath to get to the html section you want
+	diary_content = tree.xpath('//div[@id="diary_content"]/p/text()')
+
+	return diary_content
+
+
+def write_diary(diary_note):
+	rw = requests.post(server_address, data = {'new_line': diary_note})
+
+	print "%s have been sent to the web server." % diary_note
+
+
 
 def main():
-	# create an client socket, using TCP
-	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 	while True:
-		# prompt the user to input a line of note
-		message = raw_input(">>> ")
-
-		if message in ['help', 'h', '?']:
-			print '''\
-		type h/help/? for help
-		type q/quit to quit
-		type r/sync to show history'''
-
-		elif message in ['q', 'quit']:
-			print "close the client socket." 
-			sock.close()
+		diary_note = raw_input('>>> ')
+		if diary_note in ['h', 'help', '?']:
+			print help_message
+		elif diary_note in ['q', 'quit']:
+			print "Bye ~"
 			break
-
-		elif message in ['r', 'sync']:
-			sent = sock.sendto(message, server_address)
-			data, server = sock.recvfrom(1024)
-			print "=" * 10 + "HISTORY" + "=" * 10
-			print data
-			print "=" * 10 + "HISTORY END" + "=" * 10
-
+		elif diary_note in ['r', 'sync']:
+			for line in read_diary():
+				print line
 		else:
-			# send the message to the server
-			sent = sock.sendto(message, server_address)
-
-			print "sending %s bytes to '%s'" % (sent, server_address[0])
+			write_diary(diary_note)
 
 if __name__ == "__main__":
 	main()
