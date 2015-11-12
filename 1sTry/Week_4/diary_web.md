@@ -54,7 +54,7 @@
 	* `debug`, 调试, 可以在网页端直接显示报错信息.
 
 * 最终实现的网页界面是这样婶的.
-![](/Users/hysic/python/OMOOC2py/_src/om2py4w/4wex0/webwebweb.png)
+![](https://github.com/hysic/OMOOC2py/blob/master/_src/om2py4w/4wex0/webwebweb.png?raw=true)
 
 
 ### CLI 交互
