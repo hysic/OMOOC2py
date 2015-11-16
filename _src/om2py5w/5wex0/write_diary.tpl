@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>日记系统 Web 版</title>
+	<title>日记系统 SAE 版</title>
 </head>
 <body>
-	<p>Welcome to the Web diary by hysic.</p>
+	<p>Welcome to the little diary by hysic.</p>
 	<p>输入 clear 清空日记.慎用!!!</p>
 
 	<form action='/' method="POST">
