@@ -14,10 +14,8 @@
 	</form>
 
 	<div id="diary_content">
-	%with open(diary_file) as f:
-		%for line in f:
-			<p>{{line[0: -1]}}</p>
-		%end
+	%for line in database.get("diary"):
+		<p>{{line}}</p>
 	%end
 	</div>
 </body>
