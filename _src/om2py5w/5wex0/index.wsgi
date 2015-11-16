@@ -23,7 +23,7 @@ def write_diary():
     diary_content = current_time + '\t' + new_line + '\n'
 
     diary = kv.get(test_key)
-    diary.append(new_line)
+    diary.append(diary_content)
 
     return template("write_diary.tpl", database = kv)
 
