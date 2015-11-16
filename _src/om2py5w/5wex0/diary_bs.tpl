@@ -6,8 +6,8 @@
 
     <title>hysic's Diary</title>
 
-    <link href="./bootstrap.css" rel="stylesheet">
-    <link href="./starter-template.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/starter-template.css" rel="stylesheet">
   </head>
 
   <body>
@@ -33,10 +33,20 @@
     </nav>
 
     <div class="container">
-
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Welcome to the little diary by hysic.</h1>
+        <p class="lead">You can write everything you like.</p>
+      </div>
+
+      <form action='/' method="POST">
+        <input type="text" size="100" maxlength="100" name="new_line" autofocus>
+        <input type="submit" name="save" value="保存">
+      </form>
+
+      <div id="diary_content">
+      %for line in database.get("diary"):
+        <p>{{line}}</p>
+      %end
       </div>
 
     </div><!-- /.container -->

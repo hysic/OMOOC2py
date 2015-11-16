@@ -14,7 +14,7 @@ if not kv.get(test_key):
 
 @app.route('/')
 def show_diary():
-    return template("write_diary.tpl", database = kv)
+    return template("diary_bs.tpl", database = kv)
 
 @app.route('/', method='POST')
 def write_diary():
@@ -25,6 +25,6 @@ def write_diary():
     diary = kv.get(test_key)
     diary.append(diary_content)
 
-    return template("write_diary.tpl", database = kv)
+    return template("diary_bs.tpl", database = kv)
 
 application = sae.create_wsgi_app(app)
