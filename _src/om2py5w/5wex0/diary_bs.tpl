@@ -6,8 +6,8 @@
 
     <title>hysic's Diary</title>
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/starter-template.css" rel="stylesheet">
+    <link href="./static/bootstrap.css" rel="stylesheet">
+    <link href="./static/starter-template.css" rel="stylesheet">
   </head>
 
   <body>
@@ -35,17 +35,24 @@
     <div class="container">
       <div class="starter-template">
         <h1>Welcome to the little diary by hysic.</h1>
-        <p class="lead">You can write everything you like.</p>
       </div>
 
-      <form action='/' method="POST">
-        <input type="text" size="100" maxlength="100" name="new_line" autofocus>
-        <input type="submit" name="save" value="保存">
+      <form class="well form-inline" action='/' method="POST">
+        <div class="form-group form1">
+          <label for="new_line">输入日记: </label>
+          <input type="text"  id="new_line" name="new_line" size="" autofocus>
+        </div>
+        <div class="form-group">
+          <label for="tag_input">标签: </label>
+          <input type="text" id="tag_input" name="tag_input">
+        
+          <button class="btn" type="submit" name="save">保存</button>
+          </div>
       </form>
 
       <div id="diary_content">
-      %for line in database.get("diary"):
-        <p>{{line}}</p>
+      %for diary in diaries:
+        <p class="lead">{{diary}}</p>
       %end
       </div>
 

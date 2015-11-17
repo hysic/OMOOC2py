@@ -6,25 +6,38 @@ import time
 
 app = Bottle()
 
-kv = sae.kvdb.Client(debug=True)
+kv = sae.kvdb.Client()
 
-test_key = "diary"
-if not kv.get(test_key):
-    kv.set(test_key, [])
+if not kv.get("diary_num"):
+    kv.set("diary_num", 0)
 
 @app.route('/')
 def show_diary():
-    return template("diary_bs.tpl", database = kv)
+    # get all diary data
+    all_diary_keys = kv.getkeys_by_prefix("note")
+    diary_values = [kv.get(key) for key in all_diary_keys]
+    sorted_diaries = sorted(diary_values, key = lambda x:x["time"])
+
+    return template("diary_bs.tpl", diaries = sorted_diaries)
 
 @app.route('/', method='POST')
 def write_diary():
-    new_line = request.POST.get('new_line', '')
+    key_num = kv.get("diary_num")
+    diary_key ="note" + str(key_num)
+    kv.set("diary_num", key_num + 1)
+
     current_time = time.strftime("%Y-%m-%d %H: %M: %S")
-    diary_content = current_time + '\t' + new_line + '\n'
+    new_line = request.POST.get('new_line', '')
+    tag = request.POST.get('tag_input', '')
+   
+    diary_value = {"time": current_time, "content": new_line, "tag": tag}
+    kv.set(diary_key, diary_value)
 
-    diary = kv.get(test_key)
-    diary.append(diary_content)
+    # get all diary data
+    all_diary_keys = kv.getkeys_by_prefix("note")
+    diary_values = [kv.get(key) for key in all_diary_keys]
+    sorted_diaries = sorted(diary_values, key = lambda x:x["time"], reverse=True)
 
-    return template("diary_bs.tpl", database = kv)
+    return template("diary_bs.tpl", diaries = sorted_diaries)
 
 application = sae.create_wsgi_app(app)
