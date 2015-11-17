@@ -52,7 +52,8 @@
 
       <div id="diary_content">
       %for diary in diaries:
-        <p class="lead">{{diary}}</p>
+        <p>{{diary["time"]}}</p>
+        <p>{{diary["content"] + "\tTag: " + diary["tag"]}}</p>
       %end
       </div>
 
