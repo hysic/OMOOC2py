@@ -7,11 +7,10 @@
     <title>hysic's Diary</title>
 
     <link href="./static/bootstrap.css" rel="stylesheet">
-    <link href="./static/starter-template.css" rel="stylesheet">
+    <link href="./static/style.css" rel="stylesheet">
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -40,7 +39,7 @@
       <form class="well form-inline" action='/' method="POST">
         <div class="form-group form1">
           <label for="new_line">输入日记: </label>
-          <input type="text"  id="new_line" name="new_line" size="" autofocus>
+          <input type="text" name="new_line" id="new_line">
         </div>
         <div class="form-group">
           <label for="tag_input">标签: </label>
@@ -56,8 +55,14 @@
         <p>{{diary["content"] + "\tTag: " + diary["tag"]}}</p>
       %end
       </div>
-
     </div><!-- /.container -->
+
+    <footer class="footer">
+      <div class="container">
+        <p>您是本站的第xx位访问者.</p>
+        <p>本站共有{{num}}条笔记.</p>
+      </div>
+    </footer>
 
   </body>
 </html>

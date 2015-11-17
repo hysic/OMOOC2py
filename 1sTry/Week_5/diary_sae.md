@@ -11,10 +11,18 @@
 
 ## 任务开发记录
 ### SAE 介绍
+* [PAAS vs VPS](https://www.quora.com/Should-I-choose-a-VPS-or-a-PAAS-How-to-make-that-decision)
+* SAE 是 xxx, 文档
+* SAE 本地开发
+* SAE 服务端日志
+*  
 
-
-
-#### KVDB 
+* KVDB
+	* tags
+	* 备份
+* CLI 访问
+	* 需要获取的数据: 笔记数量, 访问数量, 归档下载
+	* 接口设计??
 
 
 ### UI 设计

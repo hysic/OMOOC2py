@@ -22,7 +22,7 @@ def get_all_diaries():
 @app.route('/')
 def show_diary():
     sorted_diaries = get_all_diaries()
-    return template("diary_bs.tpl", diaries = sorted_diaries)
+    return template("diary_bs.tpl", diaries = sorted_diaries, num=kv.get("diary_num"))
 
 @app.route('/', method='POST')
 def write_diary():
@@ -39,6 +39,6 @@ def write_diary():
 
     sorted_diaries = get_all_diaries()
 
-    return template("diary_bs.tpl", diaries = sorted_diaries)
+    return template("diary_bs.tpl", diaries = sorted_diaries, num=kv.get("diary_num"))
 
 application = sae.create_wsgi_app(app)
