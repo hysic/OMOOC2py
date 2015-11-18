@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>hysic's Diary</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./static/bootstrap.css" rel="stylesheet">
@@ -42,9 +42,9 @@
           <ul class="nav nav-sidebar tags">
             <li class="lead">Tags</li>
             <li><a href="/">All Tags</a></li>
-            %for tag in tags:
-              <li><a href="/{{tag}}">{{tag}}</a></li>
-            %end
+          %for tag in tags:
+            <li><a href="/{{tag}}">{{tag}}</a></li>
+          %end
           </ul>
         </div>
 
@@ -70,14 +70,16 @@
           %end
           </div>
         </div>
-          <footer class="footer">
-            <div class="container">
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
               <p>您是本站的第{{access}}位访问者.</p>
               <p>本站共有{{num}}条笔记.</p>
             </div>
           </footer>
-      </div>
-    </div>
+
     
   </body>
 </html>
