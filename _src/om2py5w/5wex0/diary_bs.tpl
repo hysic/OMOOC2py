@@ -39,7 +39,7 @@
       <form class="well form-inline" action='/' method="POST">
         <div class="form-group form1">
           <label for="new_line">输入日记: </label>
-          <input type="text" name="new_line" id="new_line">
+          <input type="text" name="new_line" id="new_line" autofocus>
         </div>
         <div class="form-group">
           <label for="tag_input">标签: </label>
@@ -59,7 +59,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>您是本站的第xx位访问者.</p>
+        <p>您是本站的第{{access}}位访问者.</p>
         <p>本站共有{{num}}条笔记.</p>
       </div>
     </footer>
