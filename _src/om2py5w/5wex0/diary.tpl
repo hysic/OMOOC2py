@@ -41,8 +41,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar tags">
             <li class="lead">Tags</li>
+            <li><a href="/">All Tags</a></li>
             %for tag in tags:
-              <li><a href="#">{{tag}}</a></li>
+              <li><a href="/{{tag}}">{{tag}}</a></li>
             %end
           </ul>
         </div>
