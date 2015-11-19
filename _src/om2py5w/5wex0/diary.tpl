@@ -43,7 +43,7 @@
             <li class="lead">Tags</li>
             <li><a href="/">All Tags</a></li>
           %for tag in tags:
-            <li><a href="/{{tag}}">{{tag}}</a></li>
+            <li class="tag"><a href="/{{tag}}">{{tag}}</a></li>
           %end
           </ul>
         </div>
@@ -75,8 +75,8 @@
 
     <footer class="footer">
       <div class="container">
-              <p>您是本站的第{{access}}位访问者.</p>
-              <p>本站共有{{num}}条笔记.</p>
+              <p>您是本站的第<span id="traffic">{{access}}</span>位访问者.</p>
+              <p>本站共有<span id="diary_num">{{num}}</span>条笔记.</p>
             </div>
           </footer>
 

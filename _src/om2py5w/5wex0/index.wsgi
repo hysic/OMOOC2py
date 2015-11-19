@@ -103,7 +103,6 @@ def read_tagged_diaries(tag):
         tags = get_all_tags()
         return template("diary.tpl", diaries = tagged_diaries, num=kv.get("diary_num"), access=kv.get("access_num"), tags=tags)
     else:
-        return None
-
+        return "Tag %s not found." % tag
 
 application = sae.create_wsgi_app(app)
