@@ -60,17 +60,14 @@
 ### UI 设计
 * 理想状态: google "diary tag" 发现了iOS 应用[Tag Journal](https://itunes.apple.com/us/app/tag-journal-write-your-diary/id742204884?mt=8), 界面很好看.
 * 目前状态: 导航栏, 左侧边栏(显示 tags), 提示输入框, 历史日记显示, footer(显示日记数量及访客数量).
-![]()
 
+![](https://github.com/hysic/OMOOC2py/blob/master/1sTry/Week_5/sae-UI.png?raw=true)
 
-
+* 坑: 本地测试左侧 tag 边栏显示 OK, 上传 SAE 后无法显示.
 
 ### CLI 交互
-* CLI 访问
-	* 需要获取的数据: 笔记数量, 访问数量, 归档下载
-	* 接口设计??
-
-
+* CLI 访问类似上周的任务, 只是服务器地址由 `localhost` 变成 `http://hysic1986.sinaapp.com`, 需要的模块有 `requests` 和 `lxml`.
+* 需要的功能包括: 读日记, 写日记, 读取笔记数量, 读取访问数量, 清空日记及统计.
 
 
 ### 遗留问题

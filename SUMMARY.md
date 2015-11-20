@@ -12,6 +12,8 @@
 		* [日记系统 net 版](1sTry/Week_3/diary_net.md)
 	* [第4周行动](1sTry/Week_4/README.md)
 		* [日记系统 Web 版](1sTry/Week_4/diary_web.md)
+	* [第5周行动](1sTry/Week_5/README.md)
+		* [日记系统 SAE 版](1sTry/Week_5/diary_sae.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
 - [代码 (_src)](_src/README.md) 
@@ -25,6 +27,8 @@
   + [2wd4大妈讲座笔记](Lect/20151029note.md)
   + [3wd4大妈讲座笔记](Lect/20151105note.md)
   + [[3wd6]北京 C2T2 个人总结](Lect/C2T2_20151107.md)
+  + [[4wd4]大妈讲座笔记](Lect/20151112note.md)
+  + [[5wd3]大妈讲座笔记](Lect/20151118note.md)
   + [思考碎片](Lect/debris.md)
   + [教程该怎么写](Lect/how2tutorial.md)
 
