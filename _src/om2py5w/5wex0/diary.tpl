@@ -42,9 +42,9 @@
           <ul class="nav nav-sidebar tags">
             <li class="lead">Tags</li>
             <li><a href="/">All Tags</a></li>
-          %for tag in tags:
-            <li class="tag"><a href="/{{tag}}">{{tag}}</a></li>
-          %end
+            %for tag in tags:
+              <li class="tag"><a href="/{{tag}}">{{tag}}</a></li>
+            %end
           </ul>
         </div>
 
