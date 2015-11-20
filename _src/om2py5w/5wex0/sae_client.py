@@ -17,8 +17,8 @@ help_message = """欢迎来到小小日记系统 SAE 版
     ATTENTION: type DELETE to empty history!!!
     """
 
-#server_address = 'http://hysic1986.sinaapp.com'
-server_address = 'http://localhost:8080'
+server_address = 'http://hysic1986.sinaapp.com'
+#server_address = 'http://localhost:8080'
 
 
 def get_stats():
