@@ -46,6 +46,14 @@
 	git commit -m "first commit"
 	git push sae master:1
 	```
+* 坑1: 本地测试左侧 tag 边栏显示 OK, 上传 SAE 后无法显示.
+	* 经 @wp-lai 同学提醒, KVDB 数据库的键值是字典时, 修改后一定要用 `kv.set` 或` kv.replace` 函数将修改后的键值存到 KVDB 中.
+
+* 坑2: 尝试在 `/<tag>` 子页面中显示对应 tag 的日记, 可是无论如何总是404.
+	* 这个问题就更坑了, 在机场延误无绝期的等待中, 感觉完全找不到解决的办法, 把 route 换成 `/任何tag` 都可以正常显示, 可用通配符就是不行.
+	* 问题出在通配符的问题. Google `SAE bottle wildcard` 无果, 看了几遍 Routing 的官方文档, 终于注意到了 [Legacy Syntax](http://bottlepy.org/docs/dev/routing.html#legacy-syntax) 这一小节, 发现`<tag>` 这种通配符格式是从Bottle 0.10 版本才开始出现的, 而 SAE 中预装的 Bottle 版本呢? 是0.9.6 !!!
+	* 问题找到了, 只要把通配符的格式变成 `/:tag` 即可. 
+	* 问题是解决了, 看起来很简单, 但过程是十分曲折并痛苦的(叠加了机场飞机延误的痛苦), 期间几次尝试在心中使用小黄鸭调试法, 才确定是通配符的问题.
 
 #### KVDB
 * SAE 有一套自己的数据库, 就叫 KVDB, 和他家"weibo牌微博"有的一拼.
@@ -63,7 +71,7 @@
 
 ![](https://github.com/hysic/OMOOC2py/blob/master/1sTry/Week_5/sae-UI.png?raw=true)
 
-* 坑: 本地测试左侧 tag 边栏显示 OK, 上传 SAE 后无法显示.
+
 
 ### CLI 交互
 * CLI 访问类似上周的任务, 只是服务器地址由 `localhost` 变成 `http://hysic1986.sinaapp.com`, 需要的模块有 `requests` 和 `lxml`.

@@ -33,8 +33,10 @@ def get_all_diaries():
     return sorted_diaries
 
 def get_tagged_diaries(tag):
-    tagged_diaries = kv.get("tags")[tag]
-    sorted_diaries = sorted(tagged_diaries, key = lambda x:x["time"], reverse=True)
+    kv_tags = kv.get("tags")
+    if tag in kv_tags:
+        tagged_diaries = kv_tags[tag]
+        sorted_diaries = sorted(tagged_diaries, key = lambda x:x["time"], reverse=True)
 
     return sorted_diaries
 
@@ -42,7 +44,7 @@ def get_all_tags():
     tag_list = []
     for tag in kv.get("tags"):
         tag_list.append(tag)
-    return tag_list
+    return sorted(tag_list)
 
 @app.route('/')
 def show_diary():
@@ -63,19 +65,24 @@ def write_diary():
     new_line = request.POST.get('new_line', '')
     tag = request.POST.get('tag_input', '')
 
+    kvdb_tags = kv.get("tags")
     if tag:
         diary_value = {"time": current_time, "content": new_line, "tag": tag}
-        if tag in kv.get("tags"):
-            kv.get("tags")[tag].append(diary_value)
+        if tag in kvdb_tags:
+            kvdb_tags[tag].append(diary_value)
+            kv.set("tags", kvdb_tags)
         else:
-            kv.get("tags")[tag] = [diary_value]
+            kvdb_tags[tag] = [diary_value]
+            kv.set("tags", kvdb_tags)
     else:
         tag = "unsorted"
         diary_value = {"time": current_time, "content": new_line, "tag": tag}
-        if tag in kv.get("tags"):
-            kv.get("tags")[tag].append(diary_value)
+        if tag in kvdb_tags:
+            kvdb_tags[tag].append(diary_value)
+            kv.set("tags", kvdb_tags)
         else:
-            kv.get("tags")[tag] = [diary_value]
+            kvdb_tags[tag] = [diary_value]
+            kv.set("tags", kvdb_tags)
 
     kv.set(diary_key, diary_value)
 
@@ -94,15 +101,17 @@ def delete_diary():
     kv.set('tags', {})
     return "The world has been destroyed."    
 
-@app.route('/<tag>')
-def read_tagged_diaries(tag):
-    if tag in kv.get("tags"):
-        tagged_diaries = get_tagged_diaries(tag)
-        access_num = kv.get("access_num")
-        kv.set("access_num", access_num+1)
-        tags = get_all_tags()
-        return template("diary.tpl", diaries = tagged_diaries, num=kv.get("diary_num"), access=kv.get("access_num"), tags=tags)
-    else:
-        return "Tag %s not found." % tag
+@app.route("/:tag_name")
+def read_tagged_diaries(tag_name):
+    kv_tags = kv.get("tags")
+    if tag_name in kv_tags:
+        tagged_diaries = get_tagged_diaries(tag_name)
 
+        diary_tags = get_all_tags()
+        
+        return template("diary.tpl", tags=diary_tags, diaries = tagged_diaries, num=kv.get("diary_num"), access=kv.get("access_num"))
+    else:
+        return "Tag %s not found." % tag_name
+
+        
 application = sae.create_wsgi_app(app)
